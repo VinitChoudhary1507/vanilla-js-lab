@@ -1,0 +1,11 @@
+input{
+    opacity: 0;
+    position: absolute;
+    cursor: pointer;
+    top: -90000px;
+    left: -90000px;
+}
+
+input:checked + label{
+    background-color: red;
+}
