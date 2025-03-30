@@ -1,0 +1,20 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: purple;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Ensures full height coverage */
+    overflow: hidden;
+}
+
+.btn {
+    width: 100px;
+    height:50px;
+    position: absolute;
+    background-color: #fff;
+}
