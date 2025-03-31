@@ -1,0 +1,57 @@
+* {
+    padding: 0;
+    margin: 0;
+    /* display: flex; */
+}
+
+.body {
+    display: flex;
+}
+
+.left {
+    left: 40px;
+    background-color: gray;
+    position: absolute;
+    padding: 5px;
+    cursor: pointer;
+    width: 40px;
+    border: 2px solid black;
+}
+
+.mid {
+    background-color: gray;
+    left: 29%;
+    padding: 5px;
+    position: absolute;
+    cursor: pointer;
+    width: 30px;
+    border: 2px solid black;
+}
+
+.right {
+    background-color: gray;
+    left: 49%;
+    position: absolute;
+    cursor: pointer;
+    padding: 5px;
+    width: 50px;
+    border: 2px solid black;
+}
+
+.left-content {
+    top: 10%;
+    position: absolute;
+    display: none;
+}
+
+.mid-content {
+    top: 10%;
+    position: absolute;
+    display: none;
+}
+
+.right-content {
+    top: 10%;
+    position: absolute;
+    display: none;
+}
