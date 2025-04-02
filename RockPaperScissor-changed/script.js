@@ -1,0 +1,77 @@
+const computerSigns = document.querySelectorAll('.computer-sign');
+const playerSigns = document.querySelectorAll('.player-sign');
+const playerScore = document.querySelector('.player-score');
+const computerScore = document.querySelector('.computer-score');
+const draw = document.querySelector('.draw');
+
+let p = 0;
+let c = 0;
+Loop();
+let SIGNS =[
+    {
+        sign:"rock",
+        symbol:'✊',
+        beats:'scissor'
+    },
+    {
+        sign:"scissor",
+        symbol:'✌️',
+        beats:'paper'
+    },
+    {
+        sign:"paper",
+        symbol:'🤚',
+        beats:'rock'
+    }
+]
+
+function Loop() {
+    
+    playerSigns.forEach(element => {
+        element.addEventListener('click', () => {
+            const psign= SIGNS.find(sign=>element.innerHTML===sign.symbol)
+            console.log("Player" ,psign);
+            
+            gameCalculation(psign);
+        })
+    }); 
+}
+function gameCalculation(psign) {
+  
+    const random =Math.round(Math.random()*2) 
+    const sign = computerSigns[random]  
+    let lsign = sign.innerHTML 
+    
+    const computerSign = SIGNS.find(s => s.symbol === lsign);
+    console.log(`Computer:`,computerSign);
+    if(psign===computerSign)  draw.textContent = "DRAW" ; 
+
+    if(psign.beats===computerSign.sign){console.log('player win') 
+    p+=1;
+    playerScore.textContent = `Player Score: ${p}`; 
+     }else{
+         c+=1;
+        //  const node2 = document.textContent(`(${c})`);
+         computerScore.textContent = `Computer Score: ${c}`;
+    }
+}
+
+
+
+
+
+
+
+
+
+// console.log(computerScore)
+// console.log(computerSigns)
+// console.log(playerScore)
+// for (let index = 0; index < 3; index++) {
+//     const element2 = computerSigns[index];
+//     console.log(element2)
+// }
+// for (let index = 0; index < 3; index++) {
+//     const element3 = playerSigns[index];
+//     console.log(element3)
+// } 
