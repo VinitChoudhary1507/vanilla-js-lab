@@ -30,7 +30,7 @@ body{
     font-size: 35px;
     text-align:center;
     background-color: rgb(75, 187, 224);
-    border-radius: 5px;
+    border-radius: 1rem;
 }
 .number{
     position: absolute;
@@ -49,12 +49,14 @@ body{
 }
 .password{
   position: absolute;
-  top: 50%;
+  top: 70%;
   left: 50%;
   transform: translate(-50%,-50%);
-  height: 20px;
-  width: 200px;
+  height: 30px;
+  width: 240px;
   color: blue;
+  border-radius: 0.3rem;
+
 }
 .password:hover{
         background-color: palegreen;
