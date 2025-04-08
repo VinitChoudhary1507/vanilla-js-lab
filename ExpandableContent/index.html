@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         *{
+            margin: 0;
+            padding: 0;
+            
+         }
+         body{
+            background-color: lightgray;
+         }
+         p.expand{
+            width: 300px;
+            line-height: 1.5;
+            transition: all 0.3s ease-in-out;
+         }
+         p.collapsed{
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;    
+            overflow: hidden;
+         }
+         /* p::after{
+            max-height: fit-content;
+         } */
+    </style>
+</head>
+<body>
+    <p class="expand collapsed">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad culpa ipsum delectus tempora dolor molestiae aut quidem temporibus distinctio dolorem fugiat iusto assumenda, reiciendis magni dolorum architecto autem sequi cum aliquid voluptatibus debitis odit totam odio? Mollitia sint eaque reiciendis aut provident ut deserunt, magni, vel delectus laborum inventore voluptatum exercitationem eveniet explicabo molestiae, repellendus labore numquam! In dolore, hic est blanditiis quae, fuga totam deleniti facere voluptatum, nobis mollitia harum dolorum suscipit soluta et corrupti error molestias? Reprehenderit obcaecati nulla cupiditate voluptate quod, illum delectus laboriosam natus eius reiciendis voluptatibus aspernatur architecto amet iste illo tempore, maiores aut numquam.</p>
+    <button class="btn">more</button>   
+</body>
+<script>
+   contentExpand = document.querySelector(".expand");
+   btn = document.querySelector(".btn");
+   
+   btn.addEventListener("click",(e)=>{
+        content=btn.innerText
+
+     if(content==="more"){ 
+        btn.innerText="less" ;
+        console.log(content)
+        contentExpand.classList.remove("collapsed")
+
+     }
+          else {
+            btn.innerText="more";
+          console.log(content)
+          contentExpand.classList.add("collapsed")
+    }
+   })
+   
+</script>
+</html>
