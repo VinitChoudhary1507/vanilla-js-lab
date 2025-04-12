@@ -1,9 +1,9 @@
-const btns = document.querySelector(".btn-container")
+const btns = document.querySelector(".btn-container");
 const questions = document.querySelector(".question");
-console.log(questions)
+console.log(questions);
 const start = document.querySelector(".start");
-const quizContainer = document.querySelector("#quiz-container")
-const end = document.querySelector(".end")
+const quizContainer = document.querySelector("#quiz-container");
+const end = document.querySelector(".end");
 const Quiz = [
   {
     question: "What does HTML stand for?",
@@ -38,26 +38,22 @@ let score = 0;
 let currentQuestionIndex = 0;
 
 start.addEventListener("click", (e) => {
- 
-  if(start.innerHTML==="Next"){
+  if (start.innerHTML === "Next") {
     currentQuestionIndex++;
     startQuiz();
-  }
-  else{
+  } else {
     start.style.display = "none";
     end.style.display = "inline-block";
     quizContainer.style.display = "block";
-    startQuiz()
+    startQuiz();
   }
-
-})
+});
 
 function startQuiz() {
-
-  resetState()
+  resetState();
   if (currentQuestionIndex >= Quiz.length) {
-    start.style.display = "none"
-    end.style.display = "none"
+    start.style.display = "none";
+    end.style.display = "none";
     finalScore();
     return;
   }
@@ -65,59 +61,49 @@ function startQuiz() {
   const index = currentQuestionIndex;
   questions.innerHTML = Quiz[index].question;
 
-  Quiz[index].answer.forEach(answer => {
+  Quiz[index].answer.forEach((answer) => {
     const button = document.createElement("button");
     button.innerHTML = answer.text;
     button.dataset.correct = answer.answer;
     button.classList.add("answer");
-    button.addEventListener("click", checkAnswer)
+    button.addEventListener("click", checkAnswer);
     btns.appendChild(button);
-
-  })
+  });
 }
 
 function checkAnswer(e) {
-
-  const correct = e.target.dataset.correct === "true"
+  const correct = e.target.dataset.correct === "true";
 
   if (correct) {
     e.target.classList.add("right");
-    start.style.display = "block"
+    start.style.display = "block";
     score++;
-  }
-  else {
+  } else {
     e.target.classList.add("wrong");
   }
-  const data= Array.from(btns.children).forEach((btn) => {
+  Array.from(btns.children).forEach((btn) => {
     btn.disabled = true; // ✅ added: disable all buttons after an answer is selected
     if (btn.dataset.correct === "true") {
       btn.classList.add("right"); // ✅ show correct answer after selection
     }
   });
-  const btnArray = Array.from(btns.children);
-  console.log(btns.children);                     // ✅ see the array of buttons
-  console.log(Array.isArray(btnArray));      // ✅ true if it’s a real array
-  console.log(btnArray instanceof Array);    // ✅ another way to check type
-  console.log(typeof btnArray);              // ✅ should return "object"
-  
-  
-  start.innerHTML = "Next"
-  start.style.display = "inline-block"
+  // const btnArray = Array.from(btns.children);
+  start.innerHTML = "Next";
+  start.style.display = "inline-block";
 }
 
 function resetState() {
-
   while (btns.firstChild) {
-    btns.removeChild(btns.firstChild)
+    btns.removeChild(btns.firstChild);
   }
   questions.innerHTML = "";
 }
 function finalScore() {
   resetState();
-  questions.innerHTML = `you scored ${score} out of total ${Quiz.length}`
+  questions.innerHTML = `you scored ${score} out of total ${Quiz.length}`;
 }
 end.addEventListener("click", () => {
   finalScore();
-  start.style.display = "none"
-  end.style.display = "none"
-})
+  start.style.display = "none";
+  end.style.display = "none";
+});

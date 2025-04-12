@@ -76,7 +76,7 @@ body {
 
 .answer.right {
     background-color: green;
-    cursor:not-allowed;
+
 
 }
 .answer.right:hover {
@@ -84,7 +84,7 @@ body {
 }
 .answer.wrong {
     background-color: red;
-    cursor:not-allowed;
+
 
 }
 .answer.wrong:hover {
