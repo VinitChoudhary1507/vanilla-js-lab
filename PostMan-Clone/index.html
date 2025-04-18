@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Postman</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="p-4">
+    <form data-form-submit>
+      <div class="input-group mb-4">
+        <select name="option" class="form-select flex-grow-0 w-auto" id="exampleFormControlSelect1">
+          <option unselected>GET</option>
+          <option>PUT</option>
+          <option>POST</option>
+          <option>DELETE</option>
+        </select>
+        <input  type="url" class="form-control" id="urlInput" name="url"
+          placeholder="Enter request URL : - https://example.com" />
+        <button type="submit" class="btn btn-primary">Send</button>
+      </div>
+      <ul class="nav nav-tabs">
+        <li class="nav-item" role="presentation">
+          <button type="button" class="nav-link " data-bs-toggle="tab" data-bs-target="#query-params"
+          role="tab" aria-controls="query-params" aria-selected="true">
+            Query Params
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" data-bs-toggle="tab" data-bs-target="#request-header" 
+          role="tab" type="button" aria-controls="request-header" aria-selected="false">
+            Headers
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button type="button" class="nav-link" data-bs-toggle="tab" data-bs-target="#json" 
+          role="tab" aria-controls="json" aria-selected="false">
+            JSON
+          </button>
+        </li>
+      </ul>
+      
+      <div class="tab-content p-3 border-top-0 border">
+        <div class="tab-pane fade show active" role="tabpanel" id="query-params">
+          <div data-request-params-div class="mt-2"></div>
+          <button  type="button"  data-request-query-params class="mt-2 btn btn-outline-success">
+            Add
+          </button>
+        </div>
+        <div class="tab-pane fade " role="tabpanel" id="request-header">
+          <div data-request-header-div class="mt-2"></div>
+          <button  type="button"  data-request-query-header  class="mt-2 btn btn-outline-success">Add</button>
+        </div>
+        <div class="tab-pane fade" id="json">
+          <div></div>
+        </div>
+      </div>
+    </form>
+      <div data-response-selection class="d-none mt-5">
+        <h3>Response</h3>
+        <div class="d-flex gap-3">
+          <div>Status: <span data-status></span></div>
+          <div>Time: <span data-time></span>ms</div>
+          <div>Size: <span data-size></span></div>
+        </div>
+        <ul class="nav nav-tabs pt-2" role="tablist">
+          <li class="nav-item active" role="presentation">
+            <button class="nav-link active" data-bs-toggle="tab" aria-controls="response-body"
+              data-bs-target="#response-body" aria-current="page" role="tab" >
+              Body
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link"  data-bs-toggle="tab" aria-controls="response-header"
+              data-bs-target="#response-header" role="tab">
+              Headers
+            </button>
+          </li>
+        </ul>
+        <div class="tab-content p-3 border-top-0 border"></div>
+      </div>
+    </div>
+  <template data-request-key-value>
+    <div  class="input-group mb-2">
+      <input data-key class="form-control" placeholder="Key" type="text" />
+      <input data-value class="form-control" placeholder="Value" type="text" />
+      <button type="button" class="btn btn-outline-danger">Remove</button>
+    </div>
+  </template>
+<!-- Include Axios directly -->
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<!-- Bootstrap Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script type="module">
+  import prettyBytes from 'https://cdn.jsdelivr.net/npm/pretty-bytes/+esm';
+  window.prettyBytes = prettyBytes; // Optional: make it globally accessible
+</script>
+<script  src="index.js"></script>
+
+</body>
+
+</html>
