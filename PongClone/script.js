@@ -9,6 +9,7 @@ const batX = leftBat.offsetTop;
                                     // console.log("sdas", batX)
 const totalX = window.innerWidth
 const totalY = window.innerHeight
+
 let leftscore = 0;
 let rightscore = 0;
 let x = 30, y = 30;                 // Initial position
@@ -112,7 +113,9 @@ document.addEventListener("mousemove", (event) => {
         rightBat.style.top = `${verticalY}` + "px";
     }
 });
-
+requestAnimationFrame((time) => {
+    console.log("Time since page load (ms):", time);
+  });
 
 console.log(totalX)
 
