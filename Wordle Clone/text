@@ -1,0 +1,6 @@
+index.html[---contain css init also]
+js
+  --- gameLogic.js
+  --- constants.js
+  ---domManager.js
+  ---main.js

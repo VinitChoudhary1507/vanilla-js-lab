@@ -75,12 +75,13 @@ function checkAnswer(e) {
   const correct = e.target.dataset.correct === "true";
 
   if (correct) {
-    e.target.classList.add("right");
+    // e.target.classList.add("right");
     start.style.display = "block";
     score++;
   } else {
     e.target.classList.add("wrong");
   }
+  console.log(Array.from(btns.children))
   Array.from(btns.children).forEach((btn) => {
     btn.disabled = true; // ✅ added: disable all buttons after an answer is selected
     if (btn.dataset.correct === "true") {

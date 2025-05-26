@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DRAG & DROP</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        .drag {
+            background-color: lightgray;
+            cursor: move;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 30px;
+            /* Add these lines */
+            overflow: hidden; /* Contain image within box */
+            padding: 5px; /* Optional: Add spacing */
+            box-sizing: border-box; /* Prevent padding from increasing size */
+        }
+        .Up, .Down {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        .img {
+            width: 20px;
+            height: 20px;
+            /* Add these lines */
+            object-fit: contain; /* Prevent image distortion */
+            display: block; /* Remove extra space under image */
+            user-select: none; /* Prevent accidental text selection */
+        }
+    </style>
+</head>
+<body>
+    <div class="Up">
+        <div class="drag" draggable="true">
+            <img class="img" src="your-image.jpg" alt="Letter R"> <!-- Always add alt text -->
+        </div>
+        <div class="drag" draggable="true">
+            <img class="img" src="smiley.png" alt="Smiley Face">
+        </div>
+    </div>
+    <div class="Down">
+        <div class="drag" draggable="true">as</div>
+        <div class="drag" draggable="true">a</div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DRAG &  DROP</title>
+</head>
+<style>
+    .body{
+        margin: 0;
+        padding: 0;
+
+    }
+     .drag{
+      background-color: lightgray;
+      cursor:move;
+      height: 50px;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     margin-bottom:30px;
+     }
+     .Up{
+        width: 100%;
+        margin-bottom: 20px;
+      
+     }
+     .Down{
+        width: 100%;
+        margin-bottom: 20px;
+     
+     }
+   .img{
+        
+            width: 20px;
+            height: 20px;
+     }
+</style>
+<body>
+    <div class="Up">
+        <div class="drag"><img class="img" src="png-letter-r-striped-font_53876-948451.avif"></img></div>
+        <div class="drag"><img class="img" src="pngtree-happy-face-emoji-png-icon-smiley-open-mouth-emoticons-png-image_5341265.png"></img></div>
+    </div>
+    <div class="Down">
+        <div class="drag">as</div>
+        <div class="drag">a</div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> -->
